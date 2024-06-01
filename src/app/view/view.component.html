@@ -1,0 +1,31 @@
+<div class="text-center"><h1>Leave Details</h1>
+    <div class="mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>User Name</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Reson</th>
+                    <th>status</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let emp of  allEmp">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.fromdate}}</td>
+                    <td>{{emp.todate}}</td>
+                    <td>{{emp.reason}}</td>
+                    
+                        <button routerLink="/{{emp.id}}/edit" class="btn me-2"><i class="fa-solid fa-pen text-primary"></i></button>
+                        <button (click)="deleteUser(emp.id)" class="btn"> <i class="fa-solid fa-trash text-danger"></i></button>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

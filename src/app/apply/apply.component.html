@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center align-items-center flex-column w-100 p-5 text-center" >
+    <mat-card class="fw-bolder fa-2x text-info w-50">
+        <mat-card-content class="mb-3">Apply Leave</mat-card-content>
+
+        <form >
+            <!-- emp id  -->
+            <mat-form-field style="width: 75%;" class="mt-1 p-1" appearance="outline">
+              <mat-label>Employee Id</mat-label>
+              <input matInput name="id" [(ngModel)]="emp.id"  placeholder="Enter Employee Id" >
+            </mat-form-field> 
+
+            <mat-form-field style="width: 75%;" class="mt-1 p-1" appearance="outline">
+              <mat-label>Employee Name</mat-label>
+              <input matInput name="name" [(ngModel)]="emp.name"  placeholder="Enter Employee Name" >
+            </mat-form-field> 
+
+    
+            <!--calendar  -->
+    
+                <mat-form-field style="width: 75%;" class="mt-1 p-1" appearance="outline">
+                    <mat-label>From date</mat-label>
+                    <input matInput name="fromdate" [(ngModel)]="emp.fromdate" [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+    
+    
+                  <mat-form-field style="width: 75%;" class="mt-1 p-1" appearance="outline">
+                    <mat-label>To date</mat-label>
+                    <input matInput name="todate" [(ngModel)]="emp.todate" [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+    
+        <!-- reason  -->
+        <mat-form-field style="width: 75%;" class="mt-1" appearance="outline">
+            <mat-label>Reason for Leave</mat-label>
+            <textarea name="reason" [(ngModel)]="emp.reason" matInput></textarea>
+          </mat-form-field>
+
+            </form>
+            <div class=" p-2">
+                <button (click)=" applyLeave()" class="btn btn-primary">Apply</button>
+                <button routerLink="/view" class="btn btn-secondary ms-2">View</button>
+              </div>
+</mat-card>
+</div>
+
